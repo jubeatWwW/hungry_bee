@@ -3,7 +3,7 @@ var path = require('path');
 
 var BUILD_DIR = path.resolve(__dirname, 'build');
 var APP_DIR = path.resolve(__dirname, 'src/app');
-var CSS_DIR = path.resolve(__dirname, 'src/css');
+var CSS_DIR = path.resolve(__dirname, 'src/style');
 
 var config = {
     entry: [
