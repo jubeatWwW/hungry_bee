@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, IndexLink} from 'react-router';
+import LoginForm from './component/LoginForm'
 
 export default class NavBar extends React.Component{
     render(){
@@ -25,32 +26,7 @@ export default class NavBar extends React.Component{
                                 <b>會員登入</b>
                                 <span className="caret"></span>
                             </a>
-                            <ul className="dropdown-menu dropdown-menu-right">
-                                <li>
-                                    <div className="col-md-12">
-                                        <form className="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                            <div className="form-group">
-                                                <label className="sr-only" htmlFor="login-email">電子郵件</label>
-                                                <input type="email" className="form-control" id="login-email" placeholder="請輸入電子郵件" required/>
-                                            </div>
-                                            <div className="form-group">
-                                                <label className="sr-only" htmlFor="exampleInputPassword2">密碼</label>
-                                                <input type="password" className="form-control" id="exampleInputPassword2" placeholder="請輸入密碼" required/>
-                                                <div className="help-block">
-                                                    <a href="register.htm">尚未成為會員</a> 
-                                                    <a href="forgot.htm">忘記密碼?</a>
-                                                </div>
-                                            </div>
-                                            <div className="form-group">
-                                                <button type="submit" className="btn btn-primary btn-block">登入</button>
-                                            </div>
-                                            <div className="checkbox">
-                                                <label><input type="checkbox"/>保持登入 </label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </li>
-                            </ul>
+                            <LoginForm />
                         </li>
                     </ul>
                 </div>

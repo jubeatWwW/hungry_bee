@@ -1,0 +1,17 @@
+@mixin register(){
+    .register{
+        text-align: center;
+        padding: 20px 0;
+        .register-form{
+            width: 60%;
+            margin: auto;
+            label{
+                float: left;
+            }
+            .form-text{
+                padding: 40px 0;
+                text-align: left;
+            }
+        }
+    }
+}

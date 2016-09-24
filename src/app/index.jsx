@@ -7,6 +7,7 @@ import NavBar from './NavBar';
 import HomePage from './HomePage';
 import Store from './Store';
 import Group from './Group';
+import Register from './Register';
 
 import '../style/index.scss';
 
@@ -27,7 +28,8 @@ const routes = (
         <IndexRoute component={HomePage} />
         <Route path="/store" component={Store}/>
         <Route path="/group" component={Group}/>
+        <Route path="/register" component={Register}/>
     </Route>
 );
 
-render(<Router routes={routes} history={hashHistory} />, document.getElementById('container'));
+render(<Router routes={routes} history={hashHistory} />, document.getElementById('app'));
