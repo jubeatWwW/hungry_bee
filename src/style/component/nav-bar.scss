@@ -1,0 +1,40 @@
+@mixin nav-bar(){
+    .nav-bar{
+        position: relative;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin-top: 0;
+        background: black;
+        width: 100%;
+        height: 90px;
+        vertical-align: middle;
+        .inner{
+            position: relative;
+            width: 80%;
+            margin: auto;
+            padding-top: 20px;
+            a{
+                margin-left: 10px;
+                height: 80%;
+            }
+            ul{
+                float: right;
+                margin-right: 30px;
+                li{
+                    display: inline;
+                    color: white;
+                    padding: 15;
+                    font-weight: bold;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                    &:hover{
+                        color: #FFC933;
+                    }
+                }
+            }
+        }
+    }
+}

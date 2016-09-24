@@ -26,6 +26,11 @@ var config = {
                 include: CSS_DIR,
                 exclude: /node_modules/,
                 loader: 'style!css!sass'
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                exclude: /node_modules/,
+                loader: 'url-loader?limit=100000'
             }
         ]
     },
