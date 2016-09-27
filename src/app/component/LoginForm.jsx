@@ -17,7 +17,7 @@ export default class LoginForm extends React.Component{
                                 <input type="password" className="form-control" id="passwd" placeholder="請輸入密碼" required/>
                                 <div className="help-block">
                                     <Link to="/register">尚未成為會員</Link> 
-                                    <a href="forgot.htm">忘記密碼?</a>
+                                    <Link to="/forgot">忘記密碼?</Link>
                                 </div>
                             </div>
                             <div className="form-group">

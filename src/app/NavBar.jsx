@@ -5,7 +5,9 @@ import LoginForm from './component/LoginForm'
 export default class NavBar extends React.Component{
     render(){
         let items = [{id: 1, text: '首頁', dropdown: false, link: '/', home: true}, 
-                    {id: 2, text: '進度頁面', dropdown: false, link: '/store', home: false}];
+                    {id: 2, text: '進度頁面', dropdown: false, link: '/edit', home: false},
+                    {id: 3, text: '店家', dropdown: false, link: '/store', home: false},
+                    {id: 4, text: '編輯基本資料', dropdown: false, link: '/edit', home: false}];
         return (
             <div className="nav-bar">
                 <div className="inner">

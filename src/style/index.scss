@@ -1,5 +1,5 @@
 @import './component/nav-bar.scss';
-@import './register.scss';
+@import './component/form.scss';
 
 @font-face {
     font-family: Roboto;
@@ -21,6 +21,6 @@ body{
         padding: 40px 0;
     }
     @include nav-bar();
-    @include register();
+    @include form();
 
 }

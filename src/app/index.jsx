@@ -8,6 +8,8 @@ import HomePage from './HomePage';
 import Store from './Store';
 import Group from './Group';
 import Register from './Register';
+import Edit from './Edit';
+import Forgot from './Forgot';
 
 import '../style/index.scss';
 
@@ -29,6 +31,8 @@ const routes = (
         <Route path="/store" component={Store}/>
         <Route path="/group" component={Group}/>
         <Route path="/register" component={Register}/>
+        <Route path="/edit" component={Edit}/>    
+        <Route path="/forgot" component={Forgot}/>    
     </Route>
 );
 
