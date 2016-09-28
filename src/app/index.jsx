@@ -17,11 +17,11 @@ import '../style/index.scss';
 class App extends React.Component {
     render() {
         return (
-                <div>
-                    <NavBar />
-                    {this.props.children}
-                </div>
-                );
+            <div>
+                <NavBar />
+                {this.props.children}
+            </div>
+        );
     }
 };
 
