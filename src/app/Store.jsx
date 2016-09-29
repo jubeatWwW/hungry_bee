@@ -1,4 +1,5 @@
 import React from 'react';
+import ShortId from 'shortid';
 
 export default class Register extends React.Component{
     constructor(props){

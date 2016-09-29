@@ -22,7 +22,7 @@ export default class Register extends React.Component{
               url: "https://jubeatdb.nctucs.net/register",
               method: "POST",
               xhrFields: {
-                withCredentials: false
+                withCredentials: true
               },
               processData: false,
               contentType: false,

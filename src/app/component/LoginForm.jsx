@@ -35,11 +35,11 @@ export default class LoginForm extends React.Component{
     }
 
     handleSubmit(event){
+        event.preventDefault();
         console.log(this.state);
         let form = new FormData();
         form.append('email', this.state.email);
         form.append('passwd', this.state.passwd);
-
         this.setting.data = form;
 
         $.ajax(this.setting).done((res) => {

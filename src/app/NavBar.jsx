@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link, IndexLink} from 'react-router';
+import ShortId from 'shortid';
 import LoginForm from './component/LoginForm'
 
 export default class NavBar extends React.Component{
     render(){
-        let items = [{id: 1, text: '首頁', dropdown: false, link: '/', home: true}, 
-                    {id: 2, text: '進度頁面', dropdown: false, link: '/edit', home: false},
-                    {id: 3, text: '店家', dropdown: false, link: '/store', home: false},
-                    {id: 4, text: '編輯基本資料', dropdown: false, link: '/edit', home: false}];
+        let items = [{text: '首頁', dropdown: false, link: '/', home: true}, 
+                    {text: '進度頁面', dropdown: false, link: '/edit', home: false},
+                    {text: '店家', dropdown: false, link: '/store', home: false},
+                    {text: '編輯基本資料', dropdown: false, link: '/edit', home: false}];
         return (
             <div className="nav-bar">
                 <div className="inner">
@@ -20,7 +21,7 @@ export default class NavBar extends React.Component{
                                 route = <IndexLink to={item.link}>{item.text}</IndexLink>;
                             else
                                 route = <Link to={item.link}>{item.text}</Link>;
-                            return <li key={item.id} className="nav-li">{route} </li>;
+                            return <li key={ShortId.generate()} className="nav-li">{route} </li>;
                         })
                     }
                         <li className="dropdown nav-li">
