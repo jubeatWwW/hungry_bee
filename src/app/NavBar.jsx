@@ -8,6 +8,7 @@ export default class NavBar extends React.Component{
         let items = [{text: '首頁', dropdown: false, link: '/', home: true}, 
                     {text: '進度頁面', dropdown: false, link: '/edit', home: false},
                     {text: '店家', dropdown: false, link: '/store', home: false},
+                    {text: '弱勢團體', dropdown: false, link: '/group', home: false},
                     {text: '編輯基本資料', dropdown: false, link: '/edit', home: false}];
         return (
             <div className="nav-bar">
