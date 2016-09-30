@@ -11,7 +11,7 @@ export default class GroupModal extends React.Component{
                 tagName: "name"},
             {id: 3, text: "領取人電話", type: "tel", labelFor: "recipient-tel", 
                 tagName: "tel" },
-            {id: 4, text: "ˇ領取人地址", type: "text", labelFor: "recipient-address",
+            {id: 4, text: "領取人地址", type: "text", labelFor: "recipient-address",
                 tagName: "address"}
         ];
 
@@ -37,7 +37,7 @@ export default class GroupModal extends React.Component{
 
     handleSubmit(event){
         event.preventDefault();
-        console.log("WTF");
+        console.log(this.state);
     }
 
     render(){
@@ -51,9 +51,9 @@ export default class GroupModal extends React.Component{
                             </button>
                             <h3 className="modal-title text-center font-bold padding-top-bottom-md" id="myModalLabel">愛心便當領取</h3>
                         </div>
-                        <div className="modal-body">
+                        <form onSubmit={this.handleSubmit.bind(this)}>
+                            <div className="modal-body">
                                 
-                            <form onSubmit={this.handleSubmit.bind(this)}>
                             {   
                                 this.formContent.map((item) => {
                                     return (
@@ -68,13 +68,15 @@ export default class GroupModal extends React.Component{
                                     );
                                 })
                             }
+                            </div>
+                            <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary input-lg" data-dismiss="modal">關閉</button>
                                 <button type="submit" 
                                     className="btn btn-success input-lg" >
                                         送出
                                 </button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                  </div>
             </div>
