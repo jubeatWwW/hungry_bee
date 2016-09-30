@@ -1,0 +1,32 @@
+@mixin meal(){
+    .meal{
+        padding-bottom: 40px;
+        .meal-info{
+            border-left: 1px solid #e5e5e5;
+            border-right: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+            display: block;
+            padding: 12px 10px;
+
+            .meal-info-name{
+                font-weight: bold;
+                color: #000;
+            }
+
+            .meal-info-product{
+                color: #FEA338;
+            }
+        }
+
+        .meal-provide{
+            padding: 10px;
+            background-color: #F6F6F6;
+            border: 1px solid #E5E5E5;
+            border-top: 1px solid #FFFFFF;
+            position: relative;
+            .meal-item{
+                margin-right: 6px;
+            }
+        }
+    }
+}

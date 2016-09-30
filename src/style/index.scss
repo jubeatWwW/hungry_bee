@@ -1,5 +1,6 @@
 @import './component/nav-bar.scss';
 @import './component/form.scss';
+@import './component/meal.scss';
 
 @font-face {
     font-family: Roboto;
@@ -22,5 +23,6 @@ body{
     }
     @include nav-bar();
     @include form();
+    @include meal();
 
 }

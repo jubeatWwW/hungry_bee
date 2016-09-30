@@ -1,4 +1,6 @@
 import React from 'react';
+import Meal from './component/Meal';
+import GroupModal from './component/GroupModal';
 import ShortId from 'shortid';
 
 export default class Group extends React.Component{
@@ -70,32 +72,41 @@ export default class Group extends React.Component{
                 placeText: "地址", tagName: "address"},
         ]; 
         return (
-            <div className="container">
-                <div className="col-md-12 register">
-                    <h1>Hi! $name$</h1>
-                    <div className="register-form">
-                        <div className="form-text">
-                        弱勢團體可以直接利用此表單填寫的內容，將需求的物資訊息送至資料庫。
+            <div>
+                <div className="container">
+                    <GroupModal />
+                    <Meal />
+                    <Meal />
+                    <Meal />
+                    <Meal />
+                </div>
+                <div className="container">
+                    <div className="col-md-12 register">
+                        <h1>Hi! $name$</h1>
+                        <div className="register-form">
+                            <div className="form-text">
+                            弱勢團體可以直接利用此表單填寫的內容，將需求的物資訊息送至資料庫。
+                            </div>
+                            <form onSubmit={(event) => this.handleSubmit(event)} ref="form">
+                            {
+                                formContent.map((item)=> {
+                                    return (
+                                        <div className="form-group" key={item.id}>
+                                            <label htmlFor={item.labelFor}>{item.text}</label>
+                                            <input type={item.type} 
+                                                    className="form-control input-lg" 
+                                                    id={item.labelFor} 
+                                                    placeholder={item.placeText}
+                                                    value={this.state[item.tagName]}
+                                                    onChange={this[`${item.tagName}Changed`].bind(this)}
+                                                    required/>
+                                        </div>    
+                                    )
+                                })   
+                            }
+                                <button type="submit" className="btn btn-default btn-lg btn-success">送出</button>
+                            </form>
                         </div>
-                        <form onSubmit={(event) => this.handleSubmit(event)} ref="form">
-                        {
-                            formContent.map((item)=> {
-                                return (
-                                    <div className="form-group" key={item.id}>
-                                        <label htmlFor={item.labelFor}>{item.text}</label>
-                                        <input type={item.type} 
-                                                className="form-control input-lg" 
-                                                id={item.labelFor} 
-                                                placeholder={item.placeText}
-                                                value={this.state[item.tagName]}
-                                                onChange={this[`${item.tagName}Changed`].bind(this)}
-                                                required/>
-                                    </div>    
-                                )
-                            })   
-                        }
-                            <button type="submit" className="btn btn-default btn-lg btn-success">送出</button>
-                        </form>
                     </div>
                 </div>
             </div>
