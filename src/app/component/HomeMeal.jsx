@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Meal extends React.Component{
+export default class HomeMeal extends React.Component{
 
     handleClick(){
         this.props.onClick(this.props.id, this.props.remain);
@@ -30,12 +30,6 @@ export default class Meal extends React.Component{
                 <div className="meal-provide">
                     <span className="glyphicon glyphicon-time meal-item"></span>
                     <span className="meal-item">最後取餐時間: {this.props.lastTime}</span>
-                </div>
-                <div className="meal-provide">
-                    <button type="button" className="btn btn-success btn-block btn-lg"
-                        data-toggle="modal" data-target="#GroupModal" onClick={this.handleClick.bind(this)}>
-                        領取
-                    </button>
                 </div>
             </div>
         );

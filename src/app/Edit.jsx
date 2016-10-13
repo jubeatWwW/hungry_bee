@@ -27,6 +27,18 @@ export default class Edit extends React.Component{
               contentType: false,
               mimeType: "multipart/form-data",
         }
+        this.settingEdit = {
+              async: true,
+              crossDomain: true,
+              url: "https://jubeatdb.nctucs.net/Edit",
+              method: "POST",
+              xhrFields: {
+                withCredentials: true
+              },
+              processData: false,
+              contentType: false,
+              mimeType: "multipart/form-data",
+        }
     }
     
     componentWillMount(){
@@ -54,17 +66,14 @@ export default class Edit extends React.Component{
     handleSubmit(event){
         event.preventDefault();
         console.log(this.state);
-        let editSetting = this.setting;
-        editSetting.url = "https://jubeatdb.nctucs.net/edit";
-        editSetting.method = "POST";
         let form = new FormData();
         Object.keys(this.state).map((key) => {
             if(key !== "passwd2")
                 form.append(key, this.state[key]);
         });  
-        editSetting.data = form;
+        this.settingEdit.data = form;
 
-        $.ajax(editSetting).done((res) => {
+        $.ajax(this.settingEdit).done((res) => {
             console.log(res);
         });
     }

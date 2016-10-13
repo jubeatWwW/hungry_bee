@@ -37,7 +37,7 @@ export default class GroupModal extends React.Component{
 
     handleSubmit(event){
         event.preventDefault();
-        console.log(this.state);
+        console.log(this.props.mealId);
     }
 
     render(){
@@ -63,6 +63,8 @@ export default class GroupModal extends React.Component{
                                                 className="form-control input-lg"
                                                 value={this.state[item.tagName]}
                                                 onChange={this[`${item.tagName}Changed`].bind(this)}
+                                                max={this.props.remain}
+                                                min="1"
                                                 required/>
                                         </div>
                                     );
