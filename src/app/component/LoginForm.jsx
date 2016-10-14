@@ -44,7 +44,7 @@ export default class LoginForm extends React.Component{
 
         $.ajax(this.setting).done((res) => {
             console.log(res);
-            window.location.assign('/');
+            window.location.assign('/HungryBee/');
         });
     }
 

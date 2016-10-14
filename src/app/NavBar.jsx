@@ -67,7 +67,7 @@ export default class NavBar extends React.Component{
         console.log("logout");
         $.ajax(this.settingLogout).done((res) => {
             console.log(res);
-            window.location.assign('/');
+            window.location.assign('/HungryBee/');
         });
 
     }
