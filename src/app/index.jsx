@@ -28,8 +28,8 @@ class App extends React.Component {
 const routes = (
     <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
-        <Route path="/store" component={Store}/>
-        <Route path="/group" component={Group}/>
+        <Route path="/store/:name" component={Store}/>
+        <Route path="/group/:name" component={Group}/>
         <Route path="/register" component={Register}/>
         <Route path="/edit" component={Edit}/>    
         <Route path="/forgot" component={Forgot}/>    

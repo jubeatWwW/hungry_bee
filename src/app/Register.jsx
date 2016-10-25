@@ -13,7 +13,8 @@ export default class Register extends React.Component{
             name: "",
             address: "",
             tel: "",
-            time: ""
+            start_time: "08:00",
+            end_time: "17:00"
         };
         
         this.setting = {
@@ -78,8 +79,10 @@ export default class Register extends React.Component{
                 placeText: "地址", tagName: "address", required: true},
             {id: 6, text: "連絡電話", type: "tel", labelFor: "register-tel", 
                 placeText: "連絡電話", tagName: "tel", required: true},
-            {id: 7, text: "營業時間", type: "text", labelFor: "register-open-time", 
-                placeText: "營業時間 例 : 09:00-20:00", tagName:"time", required: false}
+            {id: 7, text: "開始營業時間", type: "time", labelFor: "register-open-time", 
+                placeText: "08:00", tagName:"start_time", required: true},
+            {id: 8, text: "結束營業時間", type: "time", labelFor: "register-close-time", 
+                placeText: "17:00", tagName:"end_time", required: true}
         ]; 
         return (
             <div className="container">
