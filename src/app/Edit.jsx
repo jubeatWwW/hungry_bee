@@ -13,7 +13,8 @@ export default class Edit extends React.Component{
             name: "",
             address: "",
             tel: "",
-            time: ""
+            start_time: "",
+            end_time: ""
         }
         this.setting = {
               async: true,
@@ -94,8 +95,10 @@ export default class Edit extends React.Component{
                 placeText: "地址", tagName: "address"},
             {id: 6, text: "連絡電話", type: "text", labelFor: "register-tel", 
                 placeText: "連絡電話", tagName: "tel"},
-            {id: 7, text: "營業時間", type: "text", labelFor: "register-open-time", 
-                placeText: "營業時間 例 : 09:00-20:00", tagName: "time"}
+            {id: 7, text: "開始營業時間", type: "time", labelFor: "register-open-time", 
+                placeText: "08:00", tagName: "start_time"},
+            {id: 8, text: "結束營業時間", type: "time", labelFor: "register-open-time", 
+                placeText: "17:00", tagName: "end_time"}
         ]; 
 
 

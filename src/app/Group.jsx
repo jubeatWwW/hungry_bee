@@ -78,6 +78,8 @@ export default class Group extends React.Component{
     
     handleClick(id, remain){
         this.setState({mealId: id, remain});
+        console.log(id);
+        console.log(remain);
     }
 
     componentWillMount() {
@@ -111,7 +113,7 @@ export default class Group extends React.Component{
                                     taken={item.count-item.remain}
                                     remain={item.remain}
                                     startTime={item['start_time']}
-                                    lastTime={item['last_time']}
+                                    lastTime={item['end_time']}
                                     id={item.id}
                                     key={item.id}
                                     onClick={this.handleClick.bind(this)}/>
@@ -124,7 +126,7 @@ export default class Group extends React.Component{
                 </div>
                 <div className="container">
                     <div className="col-md-12 register">
-                        <h1>Hi! $name$</h1>
+                        <h1>Hi! {this.props.params.name}</h1>
                         <div className="register-form">
                             <div className="form-text">
                             弱勢團體可以直接利用此表單填寫的內容，將需求的物資訊息送至資料庫。

@@ -1,6 +1,28 @@
 @mixin meal(){
     .meal{
         padding-bottom: 40px;
+        .cover-img-label-blue {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 40px;
+            padding: 8px 16px;
+            background-color: #15AEE5;
+            color: #fff;
+            font-weight: bold;
+        }
+        .cover-img-label-orange {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 80px;
+            height: 40px;
+            padding: 8px 24px;
+            background-color: #ED2F40;
+            color: #fff;
+            font-weight: bold;
+        }
         .meal-img{
             display: block;
             overflow: hidden;
@@ -29,6 +51,7 @@
             border-bottom: 1px solid #e5e5e5;
             display: block;
             padding: 12px 10px;
+            background-color: white;
 
             .meal-info-name{
                 font-weight: bold;

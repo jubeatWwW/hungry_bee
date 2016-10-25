@@ -58,6 +58,7 @@ export default class NavBar extends React.Component{
             let data = JSON.parse(res);
             if(data.isLogin){
                 this.setState(data);
+                console.log(this.state);
             }
         });
     
@@ -79,9 +80,12 @@ export default class NavBar extends React.Component{
         if(this.state.isLogin){
             items.push({text: '編輯基本資料', dropdown: false, link: '/edit', home: false});
             if(this.state.identity === "group"){
-                items.push({text: '弱勢團體', dropdown: false, link: '/group', home: false});  
+                items.push({text: '弱勢團體', dropdown: false, link: `/group/${this.state.name}`, home: false});  
             } else {
-                items.push({text: '店家', dropdown: false, link: '/store', home: false});
+                items.push({text: '店家', dropdown: false, 
+                    link: {pathname:`/store/${this.state.name}`, 
+                        query: {end_time: this.state.end_time}}, 
+                        home: false});
             }
         }
 
