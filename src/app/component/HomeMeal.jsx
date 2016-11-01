@@ -18,13 +18,15 @@ export default class HomeMeal extends React.Component{
     }
 
     render(){
+        let currentTime = new Date();
+        currentTime.setTime(currentTime.getTime()+(8*3600*1000));
         return (
             <div className="meal col-md-4">
                 <div className="meal-img">
                     <a className="img-responsive">
                         <div className="meal-img-block"><img src="src/images/default-img.jpg" /></div>
                     </a>
-                    {Date.parse(new Date()) > Date.parse(this.props.endTime)? 
+                    {Date.parse(currentTime) > Date.parse(this.props.startTime)? 
                         <SalesTags discount={this.props.discount}/>:false}
                 </div>
                 <div className="meal-info">

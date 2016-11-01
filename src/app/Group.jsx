@@ -78,8 +78,6 @@ export default class Group extends React.Component{
     
     handleClick(id, remain){
         this.setState({mealId: id, remain});
-        console.log(id);
-        console.log(remain);
     }
 
     componentWillMount() {
@@ -107,13 +105,17 @@ export default class Group extends React.Component{
                     <GroupModal mealId={this.state.mealId} remain={this.state.remain}/>
                     {
                         this.state.mealData.map((item) => {
+                            let startDate = new Date(item['start_time']);
+                            let endDate = new Date(item['end_time']);
+                            startDate.setTime(startDate.getTime() + (8*3600*1000));
+                            endDate.setTime(endDate.getTime() + (8*3600*1000));
                             return (
                                 <Meal storeName={item.userName}
                                     mealName={item.name}
                                     taken={item.count-item.remain}
                                     remain={item.remain}
-                                    startTime={item['start_time']}
-                                    lastTime={item['end_time']}
+                                    startTime={startDate.toISOString()}
+                                    lastTime={endDate.toISOString()}
                                     id={item.id}
                                     key={item.id}
                                     onClick={this.handleClick.bind(this)}/>

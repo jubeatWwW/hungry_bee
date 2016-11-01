@@ -14,6 +14,20 @@ export default class GroupModal extends React.Component{
             {id: 4, text: "領取人地址", type: "text", labelFor: "recipient-address",
                 tagName: "address"}
         ];
+        
+        this.setting = {
+              async: true,
+              crossDomain: true,
+              url: "https://jubeatdb.nctucs.net/meal",
+              method: "POST",
+              xhrFields: {
+                withCredentials: true
+              },
+              processData: false,
+              contentType: false,
+              mimeType: "multipart/form-data",
+              data: {default: "default"}
+        }
 
         this.state= {
             count: "",
@@ -38,6 +52,15 @@ export default class GroupModal extends React.Component{
     handleSubmit(event){
         event.preventDefault();
         console.log(this.props.mealId);
+        let form = new FormData();
+        this.formContent.map((n)=>{
+            form.append(n.tagName, this.state[n.tagName]);
+        });      
+        form.append('mealId', this.props.mealId);
+        this.setting.data = form;
+        $.ajax(this.setting).done((res)=>{
+            console.log(res);
+        });
     }
 
     render(){

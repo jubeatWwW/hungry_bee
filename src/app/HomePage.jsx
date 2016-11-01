@@ -55,13 +55,17 @@ export default class HomePage extends React.Component{
                     <div className="container">
                         {
                             this.state.mealData.map((item) => {
+                                let startDate = new Date(item['start_time']);
+                                let endDate = new Date(item['end_time']);
+                                startDate.setTime(startDate.getTime() + (8*3600*1000));
+                                endDate.setTime(endDate.getTime() + (8*3600*1000));
                                 return (
                                     <HomeMeal storeName={item.userName}
                                         mealName={item.name}
                                         taken={item.count-item.remain}
                                         remain={item.remain}
-                                        startTime={item['start_time']}
-                                        endTime={item['end_time']}
+                                        startTime={startDate.toISOString()}
+                                        endTime={endDate.toISOString()}
                                         id={item.id}
                                         discount={item.discount}
                                         key={item.id}/>
